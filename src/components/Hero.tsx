@@ -5,7 +5,7 @@ import profile from "../assets/profile-img.jpg";
 
 const Hero: React.FC = () => {
   return (
-    <Section id="home" className="flex justify-end relative h-screen" center>
+    <Section id="home" className="flex justify-end relative h-screen">
       <img
         src={profile}
         alt="Anthony Wandera"

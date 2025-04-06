@@ -8,6 +8,10 @@
   --theme-font: "Rubik", serif;
 }
 
+html {
+  scrollbar-width: none;
+}
+
 body {
   font-family: var(--theme-font);
   background-color: var(--theme-color-background);

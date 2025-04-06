@@ -1,5 +1,7 @@
 const Title2: React.FC<{ children: string }> = ({ children }) => {
-  return <h3 className="text-5xl font-bold mb-8">{children}</h3>;
+  return (
+    <h3 className="text-5xl font-bold mb-8 sticky top-0 z-40">{children}</h3>
+  );
 };
 
 export default Title2;
