@@ -5,7 +5,7 @@ const Section: React.FC<{
   className?: string;
 }> = ({ center, id, children, className }) => {
   return (
-    <section id={id} className={`mb-16 ${className} ${center ? "mx-16" : ""}`}>
+    <section id={id} className={`mb-28 ${className} ${center ? "mx-16" : ""}`}>
       {children}
     </section>
   );

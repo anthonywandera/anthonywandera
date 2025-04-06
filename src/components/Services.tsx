@@ -7,8 +7,8 @@ import service_image_3 from "../assets/services/muhammad-rizki-hpEcXWOJjjc-unspl
 const Services: React.FC = () => {
   return (
     <div>
-      <Title2>Services</Title2>
-      <div className="grid grid-cols-3">
+      <Title2>My Services</Title2>
+      <div className="grid grid-cols-3 gap-28">
         <Service image={service_image_1} name="Web Development" />
         <Service image={service_image_2} name="UI Design" />
         <Service image={service_image_3} name="Graphic Design" />
