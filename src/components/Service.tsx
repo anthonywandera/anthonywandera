@@ -9,7 +9,9 @@ const Service: React.FC<{ image: string; name: string }> = ({
         alt={name}
         className="w-full h-full object-cover object-center"
       />
-      <p className="w-min absolute left-4 bottom-4">{name}</p>
+      <p className="w-min absolute left-4 max-sm:left-1.5 bottom-4 max-sm:bottom-1.5">
+        {name}
+      </p>
     </div>
   );
 };

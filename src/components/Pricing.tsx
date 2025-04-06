@@ -42,7 +42,7 @@ const Pricing: React.FC = () => {
   return (
     <Section id="pricing" center>
       <Heading title1="What I charge" title2="Pricing" />
-      <div className="grid grid-cols-3 gap-16">
+      <div className="grid grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1 gap-16 max-md:gap-4 max-sm:gap-8">
         {_packages.map(({ id, ...data }) => (
           <PriceCard key={id} {...data} />
         ))}

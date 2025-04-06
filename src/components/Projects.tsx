@@ -11,7 +11,7 @@ const Projects: React.FC = () => {
     <Section id="projects" center>
       <Heading title1="What I have done" title2="My Work" />
       <div className="grid grid-cols-1 grid-rows-[auto_1fr] gap-4 bg-black p-4 rounded-3xl">
-        <menu className="flex gap-16 justify-self-center items-center font-semibold">
+        <menu className="flex gap-16 max-sm:gap-2.5 justify-self-center items-center font-semibold">
           <button>
             <FaAngleLeft />
           </button>
@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
           </button>
         </menu>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 max-md:grid-cols-2 gap-4">
           <Service image={service_image_3} name="Graphic Design" />
           <Service image={service_image_2} name="UI Design" />
           <Service image={service_image_1} name="Web Development" />

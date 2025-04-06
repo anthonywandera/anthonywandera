@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
     <Section id="contact" center>
       <Heading title1="Talk to me" title2="Contact Me" />
       <form>
-        <div className="grid grid-cols-2 gap-x-16 gap-y-8 mb-8">
+        <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-x-16 max-md:gap-x-4 gap-y-8 max-md:gap-y-4 mb-8">
           <Input name="name" placeholder="Name" />
           <Input name="subject" placeholder="Subject" />
           <Input name="email" placeholder="Email" className="col-span-full" />

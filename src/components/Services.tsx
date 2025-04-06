@@ -9,7 +9,7 @@ const Services: React.FC = () => {
   return (
     <Section id="services" center>
       <Title2>My Services</Title2>
-      <div className="grid grid-cols-3 gap-28">
+      <div className="grid grid-cols-3 max-sm:grid-cols-2 gap-28 max-md:gap-8 max-sm:gap-4">
         <Service image={service_image_1} name="Web Development" />
         <Service image={service_image_2} name="UI Design" />
         <Service image={service_image_3} name="Graphic Design" />
