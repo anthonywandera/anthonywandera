@@ -30,7 +30,10 @@ const Header: React.FC = () => {
           Contact
         </a>
       </nav>
-      <button onClick={handleToggleMenu} className="hidden max-md:block">
+      <button
+        onClick={handleToggleMenu}
+        className="hidden max-md:block text-xl"
+      >
         <IoMenu />
       </button>
     </header>
