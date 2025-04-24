@@ -2,7 +2,7 @@ import Button from "../button/button";
 import Highlighted from "../highlighted/highlighted";
 import Section from "../section/section";
 
-import profile_image from "../../assets/images/profile.jpg";
+import profile_image from "/src/assets/images/profile.jpg";
 
 const Hero: React.FC = () => {
   return (
