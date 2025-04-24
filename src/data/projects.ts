@@ -8,6 +8,7 @@ export class Project {
   image: string;
   description: string;
   technologies: string[];
+  featured: boolean;
   url?: string;
   review?: string;
 
@@ -16,6 +17,7 @@ export class Project {
     technologies,
     image,
     description,
+    featured = false,
     url,
     review,
   }: {
@@ -23,6 +25,7 @@ export class Project {
     image: string;
     description: string;
     technologies: string[];
+    featured?: boolean;
     url?: string;
     review?: string;
   }) {
@@ -31,6 +34,7 @@ export class Project {
     this.technologies = technologies;
     this.image = image;
     this.url = url;
+    this.featured = featured;
     this.review = review;
     this.id = name;
   }
