@@ -1,9 +1,10 @@
-import Title2 from "./Title2";
-import Service from "./Service";
-import service_image_1 from "../assets/services/mohammad-rahmani-8qEB0fTe9Vw-unsplash.jpg";
-import service_image_2 from "../assets/services/mehdi-mirzaie-kUe-dIOu5FE-unsplash.jpg";
-import service_image_3 from "../assets/services/muhammad-rizki-hpEcXWOJjjc-unsplash.jpg";
-import Section from "./Section";
+import Title2 from "../heading/title-2";
+import Service from "./service";
+import Section from "../section/section";
+
+import service_image_1 from "/src/assets/service-images/service-image-01.jpg";
+import service_image_2 from "/src/assets/service-images/service-image-02.jpg";
+import service_image_3 from "/src/assets/service-images/service-image-03.jpg";
 
 const Services: React.FC = () => {
   return (

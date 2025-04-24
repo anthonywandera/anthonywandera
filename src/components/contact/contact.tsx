@@ -1,6 +1,6 @@
-import Button from "./Button";
-import Heading from "./Heading";
-import Section from "./Section";
+import Button from "../button/button";
+import Heading from "../heading/heading";
+import Section from "../section/section";
 import { IoSend } from "react-icons/io5";
 
 const Input: React.FC<{
@@ -11,7 +11,8 @@ const Input: React.FC<{
   textarea?: boolean;
   className?: string;
 }> = ({ className, textarea = false, ...props }) => {
-  const styles = "bg-[#181818] p-2 rounded resize-none";
+  const styles =
+    "bg-[var(--theme-color-background-tint)] p-2 rounded resize-none";
   return (
     <>
       {!textarea ? (

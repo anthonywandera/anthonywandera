@@ -1,4 +1,4 @@
-import Info from "./Info";
+import Info from "./info";
 
 const AboutMe: React.FC = () => {
   return (

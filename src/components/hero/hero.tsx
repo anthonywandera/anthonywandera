@@ -1,13 +1,14 @@
-import Button from "./Button";
-import Highlighted from "./Highlighted";
-import Section from "./Section";
-import profile from "../assets/profile-img.jpg";
+import Button from "../button/button";
+import Highlighted from "../highlighted/highlighted";
+import Section from "../section/section";
+
+import profile_image from "../../assets/images/profile.jpg";
 
 const Hero: React.FC = () => {
   return (
     <Section id="home" className="flex justify-end relative h-screen">
       <img
-        src={profile}
+        src={profile_image}
         alt="Anthony Wandera"
         className="w-full h-full object-cover object-center grayscale-25 opacity-75"
       />
