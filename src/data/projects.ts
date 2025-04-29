@@ -67,4 +67,16 @@ export const projectsList = [
     description: "Project description",
     technologies: ["html"],
   }),
+  new Project({
+    name: "Project 05",
+    image: project_image_02,
+    description: "Project description",
+    technologies: ["html"],
+  }),
+  new Project({
+    name: "Project 06",
+    image: project_image_03,
+    description: "Project description",
+    technologies: ["html"],
+  }),
 ];
