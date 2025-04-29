@@ -7,6 +7,7 @@ import Hero from "./components/hero/hero";
 import Pricing from "./components/pricing/pricing";
 import Projects from "./components/projects/projects";
 import Reviews from "./components/reviews/reviews";
+import FeaturedProjects from "./components/featured-projects/featured-projects";
 
 export default function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
       <Header />
       <Hero />
       <About />
+      <FeaturedProjects />
       <Projects />
       <Reviews />
       <Pricing />

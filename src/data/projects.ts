@@ -2,6 +2,7 @@ import project_image_01 from "/src/assets/service-images/service-image-01.jpg";
 import project_image_02 from "/src/assets/service-images/service-image-02.jpg";
 import project_image_03 from "/src/assets/service-images/service-image-03.jpg";
 
+// Project class
 export class Project {
   id: string;
   name: string;
@@ -40,6 +41,7 @@ export class Project {
   }
 }
 
+// Projects list
 export const projectsList = [
   new Project({
     name: "Project 01",
