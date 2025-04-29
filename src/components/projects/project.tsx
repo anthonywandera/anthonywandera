@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import Review from "../reviews/review";
 import ProjectPreview from "./project-preview";
+import Image from "../Image";
 
 const Project: React.FC<{
   image: string;
@@ -36,13 +37,12 @@ const Project: React.FC<{
           }}
         >
           <div className="grid grid-cols-[2fr_3fr] gap-4 h-96 max-md:grid-cols-1 max-md:grid-rows-[2fr_3fr]">
-            <div className="relative">
-              <img
-                src={image}
-                alt={name}
-                className="w-full h-full object-cover object-center rounded"
-              />
-            </div>
+            <Image
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover object-center rounded"
+            />
+
             <div className="h-full overflow-hidden overflow-y-scroll [&::-webkit-scrollbar]:hidden [scrollbar-width:none]">
               <div className="flex flex-col gap-2 w-full h-full">
                 <h2 className="z-10 text-xl text-[var(--theme-color-accent)]">
