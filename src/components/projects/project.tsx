@@ -4,7 +4,7 @@ import Review from "../reviews/review";
 import ProjectPreview from "./project-preview";
 import Image from "../Image";
 
-const Project: React.FC<{
+const ProjectItem: React.FC<{
   image: string;
   name: string;
   description: string;
@@ -84,4 +84,4 @@ const Project: React.FC<{
   );
 };
 
-export default Project;
+export default ProjectItem;
