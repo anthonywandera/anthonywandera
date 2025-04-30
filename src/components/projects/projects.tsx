@@ -15,19 +15,19 @@ const Projects: React.FC = () => {
       >
         <TabsList className="bg-transparent text-inherit flex gap-16 max-sm:gap-2.5 justify-self-center items-center font-semibold">
           <TabsTrigger
-            className="text-inherit focus:text-[var(--theme-color-background)]"
+            className="text-gray-400 focus:text-[var(--theme-color-background)]"
             value="web"
           >
             Web
           </TabsTrigger>
           <TabsTrigger
-            className="text-inherit focus:text-[var(--theme-color-background)]"
+            className="text-gray-400 focus:text-[var(--theme-color-background)]"
             value="UI"
           >
             UI/UX
           </TabsTrigger>
           <TabsTrigger
-            className="text-inherit focus:text-[var(--theme-color-background)]"
+            className="text-gray-400 focus:text-[var(--theme-color-background)]"
             value="graphics"
           >
             Graphics
