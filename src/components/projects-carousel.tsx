@@ -14,7 +14,7 @@ export default function ProjectsCarousel({
   projects: Project[];
 }) {
   return (
-    <Carousel>
+    <Carousel className="w-full">
       <CarouselContent>
         {projects.map((project) => (
           <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/4">
