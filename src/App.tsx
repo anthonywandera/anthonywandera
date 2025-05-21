@@ -1,6 +1,7 @@
 import About from "./sections/about";
 import Contact from "./sections/contact";
 import FeaturedProjects from "./sections/featured-projects";
+import Footer from "./sections/footer";
 import Hero from "./sections/hero";
 import Navigation from "./sections/navigation";
 import OtherProjects from "./sections/other-projects";
@@ -18,6 +19,7 @@ export default function App() {
       <OtherProjects />
       <Reviews />
       <Contact />
+      <Footer />
     </>
   );
 }
