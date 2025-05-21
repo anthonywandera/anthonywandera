@@ -14,12 +14,12 @@ export default function About() {
           </li>
         ))}
       </ul>
-      <p>
+      <div>
         <ul className="flex gap-4">
           <li>Age: {age}</li>
           <li>Projects: {projectsList.length}</li>
         </ul>
-      </p>
+      </div>
     </Section>
   );
 }

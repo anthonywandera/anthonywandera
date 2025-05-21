@@ -3,7 +3,7 @@ import { servicesList } from "../data";
 
 export default function Services() {
   return (
-    <Section>
+    <Section id="services">
       <h2 className="font-bold">Services</h2>
       <div className="grid grid-cols-3 gap-4">
         {servicesList.map((service) => (
