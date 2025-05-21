@@ -1,4 +1,5 @@
 import About from "./sections/about";
+import Contact from "./sections/contact";
 import FeaturedProjects from "./sections/featured-projects";
 import Hero from "./sections/hero";
 import Navigation from "./sections/navigation";
@@ -16,6 +17,7 @@ export default function App() {
       <FeaturedProjects />
       <OtherProjects />
       <Reviews />
+      <Contact />
     </>
   );
 }
