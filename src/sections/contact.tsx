@@ -56,7 +56,7 @@ export default function Contact() {
             required
           />
         </div>
-        <button className="bg-gray-200 py-1.5 px-8 rounded font-semibold w-fit">
+        <button className="bg-gray-900 py-1.5 px-8 rounded font-semibold w-fit">
           Submit
         </button>
       </form>

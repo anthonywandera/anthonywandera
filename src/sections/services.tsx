@@ -1,3 +1,4 @@
+import Grid_3 from "../components/grid-3";
 import Section from "../components/Section";
 import { servicesList } from "../data";
 
@@ -5,11 +6,12 @@ export default function Services() {
   return (
     <Section id="services">
       <h2 className="font-bold">Services</h2>
-      <div className="grid grid-cols-3 gap-4">
+
+      <Grid_3>
         {servicesList.map((service) => (
           <div
             key={service.title}
-            className="grid grid-cols-[1fr_2fr] gap-2 bg-gray-50 p-2"
+            className="grid grid-cols-[1fr_2fr] gap-2 bg-gray-900 p-2"
           >
             <img src={service.image} alt={service.title} />
             <div>
@@ -18,7 +20,7 @@ export default function Services() {
             </div>
           </div>
         ))}
-      </div>
+      </Grid_3>
     </Section>
   );
 }

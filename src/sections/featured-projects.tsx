@@ -1,3 +1,4 @@
+import Grid_3 from "../components/grid-3";
 import Section from "../components/Section";
 import { projectsList } from "../data";
 
@@ -9,7 +10,7 @@ export default function FeaturedProjects() {
   return (
     <Section id="projects">
       <h2 className="font-bold mb-4">Featured Projects </h2>
-      <div className="grid grid-cols-3 gap-4">
+      <Grid_3>
         {featuredProjectsList.map((project) => (
           <div key={project.id}>
             <h3 className="mb-2 flex gap-2 items-center">
@@ -27,14 +28,14 @@ export default function FeaturedProjects() {
             <h4 className="mb-1">Technologies</h4>
             <ul className="flex gap-2 flex-wrap text-xs">
               {project.technologies.map((tech) => (
-                <li key={tech} className="py-0.5 px-2 rounded bg-gray-100">
+                <li key={tech} className="py-0.5 px-2 rounded bg-gray-900">
                   {tech}
                 </li>
               ))}
             </ul>
           </div>
         ))}
-      </div>
+      </Grid_3>
     </Section>
   );
 }

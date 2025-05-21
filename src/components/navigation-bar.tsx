@@ -25,9 +25,9 @@ export default function NavigationBar() {
   });
 
   return (
-    <header className="flex justify-between px-10 sticky top-0 bg-white">
-      <span>aw</span>
-      <nav ref={nav} className="flex gap-4">
+    <header className="flex justify-between py-2 px-10 sticky top-0 bg-[var(--background)] max-sm:px-6">
+      <span>AW.</span>
+      <nav ref={nav} className="flex gap-4 max-sm:hidden">
         <a href="#home">Home</a>
         <a href="#about">About</a>
         <a href="#projects">Projects</a>

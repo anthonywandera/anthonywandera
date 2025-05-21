@@ -1,3 +1,4 @@
+import Grid_3 from "../components/grid-3";
 import Section from "../components/Section";
 import { projectsList } from "../data";
 
@@ -18,9 +19,9 @@ export default function OtherProjects() {
     <Section className="flex flex-col gap-8">
       <h2 className="font-bold mb-2">Other projects</h2>
 
-      <div className="grid grid-cols-3 gap-4">
+      <Grid_3>
         {webProjects.map((project) => (
-          <div key={project.id}>
+          <div key={project.title}>
             <h3 className="mb-2 flex gap-2 items-center">
               {project.title}{" "}
               <span className="bg-emerald-400 text-xs px-2 py-0.5 rounded-full">
@@ -43,9 +44,9 @@ export default function OtherProjects() {
             </ul>
           </div>
         ))}
-      </div>
+      </Grid_3>
 
-      <div className="grid grid-cols-3 gap-4">
+      <Grid_3>
         {uiProjects.map((project) => (
           <div key={project.title}>
             <h3 className="mb-2 flex gap-2 items-center">
@@ -70,9 +71,9 @@ export default function OtherProjects() {
             </ul>
           </div>
         ))}
-      </div>
+      </Grid_3>
 
-      <div className="grid grid-cols-3 gap-4">
+      <Grid_3>
         {_3dProjects.map((project) => (
           <div key={project.title}>
             <h3 className="mb-2 flex gap-2 items-center">
@@ -97,7 +98,7 @@ export default function OtherProjects() {
             </ul>
           </div>
         ))}
-      </div>
+      </Grid_3>
     </Section>
   );
 }

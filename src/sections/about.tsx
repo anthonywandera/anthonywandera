@@ -9,7 +9,7 @@ export default function About() {
       <h2 className="font-bold">SkillStack</h2>
       <ul className="flex gap-2 flex-wrap">
         {skills.map((skill) => (
-          <li key={skill} className="py-0.5 px-2 rounded-full bg-gray-100">
+          <li key={skill} className="py-0.5 px-2 rounded-full bg-gray-900">
             {skill}
           </li>
         ))}

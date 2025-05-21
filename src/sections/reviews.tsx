@@ -7,7 +7,7 @@ export default function Reviews() {
       <h2 className="font-bold mb-4">Reviews</h2>
       <div className="grid grid-cols-3 gap-4">
         {clientReviewsList.map((review) => (
-          <div key={review.id} className="bg-gray-200 p-2 rounded">
+          <div key={review.id} className="bg-gray-900 p-2 rounded">
             <p className="text-xs mb-2">{review.name}</p>
             <p>{review.message}</p>
           </div>
