@@ -11,7 +11,7 @@ export default function FeaturedProjects() {
       <h2 className="font-bold mb-4">Featured Projects </h2>
       <div className="grid grid-cols-3 gap-4">
         {featuredProjectsList.map((project) => (
-          <div key={project.title}>
+          <div key={project.id}>
             <h3 className="mb-2 flex gap-2 items-center">
               {project.title}{" "}
               <span className="bg-emerald-400 text-xs px-2 py-0.5 rounded-full">

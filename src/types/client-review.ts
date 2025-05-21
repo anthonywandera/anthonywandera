@@ -2,7 +2,7 @@ export interface ClientReview {
   id: string;
   date: string;
   rating: number;
-  review: string;
+  message: string;
   name: string;
   image?: string;
   link?: string;
