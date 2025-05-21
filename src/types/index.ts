@@ -1,2 +1,3 @@
 export * from "./project";
-export * from "./projectReview";
+export * from "./project-review";
+export * from "./client-review";

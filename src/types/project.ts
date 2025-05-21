@@ -1,4 +1,4 @@
-import { ProjectReview } from "./projectReview";
+import { ProjectReview } from "./project-review";
 
 export interface Project {
   id: string;
