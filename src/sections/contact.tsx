@@ -1,13 +1,26 @@
 import Section from "../components/Section";
 
-export default function Contact() {
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData);
-    console.log(data);
-  }
+async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const formData = new FormData(e.currentTarget);
+  const data = Object.fromEntries(formData);
+  data.date = new Date().toISOString();
 
+  const response = await fetch(
+    "https://anthonywandera-26338-default-rtdb.firebaseio.com/messages.json",
+    {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(data),
+    }
+  );
+
+  console.log(response);
+}
+
+export default function Contact() {
   return (
     <Section id="contact">
       <h2 className="font-bold mb-2">Contact</h2>
