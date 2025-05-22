@@ -7,7 +7,7 @@ export default function Hero() {
 
   return (
     <Section id="home">
-      <div className="flex gap-24 min-h-[70vh] items-center flex-wrap max-sm:gap-12 bg-red-400">
+      <div className="flex gap-24 min-h-[70vh] items-center flex-wrap max-sm:gap-12">
         <img src={image} alt={name} className="w-80 h-80 rounded-full" />
         <div className="flex flex-col gap-4 w-min">
           <p>
