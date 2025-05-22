@@ -1,11 +1,12 @@
 import Grid_3 from "../components/grid-3";
 import Section from "../components/Section";
+import Title from "../components/title";
 import { servicesList } from "../data";
 
 export default function Services() {
   return (
     <Section id="services">
-      <h2 className="font-bold">Services</h2>
+      <Title title_1="What I do" title_2="My Services" />
 
       <Grid_3>
         {servicesList.map((service) => (

@@ -1,14 +1,13 @@
 import Section from "../components/Section";
-import Title_1 from "../components/title-1";
-import Title_2 from "../components/title-2";
+import Title from "../components/title";
+
 import { profileData, projectsList } from "../data";
 
 export default function About() {
   const { bio, skills, age } = profileData;
   return (
     <Section id="about">
-      <Title_1>Who am I</Title_1>
-      <Title_2>About Me</Title_2>
+      <Title title_1="Who am I" title_2="About Me" />
       <div className="flex flex-col gap-4">
         <p>{bio}</p>
         <h2 className="font-bold">SkillStack</h2>

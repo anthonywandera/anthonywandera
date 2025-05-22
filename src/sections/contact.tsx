@@ -1,4 +1,5 @@
 import Section from "../components/Section";
+import Title from "../components/title";
 
 async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
@@ -23,7 +24,7 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 export default function Contact() {
   return (
     <Section id="contact">
-      <h2 className="font-bold mb-2">Contact</h2>
+      <Title title_1="Let's talk" title_2="Contact Me" />
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
         <div>
           <input

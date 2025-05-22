@@ -1,5 +1,6 @@
 import Grid_3 from "../components/grid-3";
 import Section from "../components/Section";
+import Title from "../components/title";
 import { projectsList } from "../data";
 
 export default function FeaturedProjects() {
@@ -9,7 +10,7 @@ export default function FeaturedProjects() {
 
   return (
     <Section id="projects">
-      <h2 className="font-bold mb-4">Featured Projects </h2>
+      <Title title_1="Best of what I do" title_2="Featured Projects" />
       <Grid_3>
         {featuredProjectsList.map((project) => (
           <div key={project.id}>
