@@ -14,7 +14,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`mb-10 ${center ? "mx-10 max-sm:mx-6" : ""} ${className}`}
+      className={`mb-10 ${center ? "mx-14 max-sm:mx-6" : ""} ${className}`}
     >
       {children}
     </section>
