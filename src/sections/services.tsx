@@ -8,7 +8,7 @@ export default function Services() {
     <Section id="services">
       <Title title_1="What I do" title_2="My Services" />
 
-      <Grid_3 className="gap-14 max-sm:gap-4 max-sm:grid-rows-3">
+      <Grid_3 className="gap-14 max-md:gap-4 max-sm:grid-rows-3">
         {servicesList.map((service) => (
           <div
             key={service.title}
@@ -19,7 +19,7 @@ export default function Services() {
                 <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-fit object-center hover:scale-105 transition-all duration-500"
+                  className="w-full h-full object-cover object-center hover:scale-105 transition-all duration-500"
                 />
               </figure>
               <h3 className="font-semibold text-sm absolute left-2 bottom-2 w-min max-sm:text-xs max-sm:left-1 max-sm:bottom-1">
