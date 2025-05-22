@@ -12,7 +12,7 @@ export default function Services() {
         {servicesList.map((service) => (
           <div
             key={service.title}
-            className="grid grid-cols-1 grid-rows-[3fr_auto] p-0.5 gap-1.5 bg-[var(--primary)] rounded-lg max-sm:grid-cols-[1fr_2fr] max-sm:grid-rows-1"
+            className="grid grid-cols-1 grid-rows-[3fr_auto] p-0.5 gap-1.5 rounded-lg max-sm:grid-cols-[1fr_2fr] max-sm:grid-rows-1"
           >
             <div className="relative w-full h-full z-0">
               <figure className="rounded-lg overflow-hidden w-full h-full">

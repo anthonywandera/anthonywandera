@@ -19,21 +19,19 @@ export default function FeaturedProjects() {
               alt={project.title}
               className="w-full h-full object-cover object-center"
             />
-            <div className="absolute bottom-0 p-1 bg-linear-[#0000,#0005_10%,var(--primary)_60%] ">
+            <div className="absolute bottom-0 w-full p-1 bg-linear-[#0000,#0005_10%,var(--primary)_90%] ">
               <h3 className="mb-2 flex gap-2 items-center font-semibold">
-                {project.title}{" "}
-                <span className="bg-emerald-400 text-gray-700 text-xs font-light px-2 py-0.5 rounded-full">
+                <span>{project.title}</span>
+                <span className="p-0.5 bg-[var(--primary-foreground)] rounded-full"></span>
+                <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
                   {project.category}
                 </span>
-                {project.featured && (
-                  <span className="bg-amber-300 text-gray-700 text-xs font-light px-2 py-0.5 rounded-full">
-                    Featured
-                  </span>
-                )}
               </h3>
-              <p className="mb-2 text-sm text-[var(--secondary-foreground)]">
-                {project.description}
-              </p>
+              <div className="hidden">
+                <p className="mb-2 text-sm text-[var(--primary-foreground)]">
+                  {project.description}
+                </p>
+              </div>
               <ul className="flex gap-2 flex-wrap text-xs">
                 {project.technologies.map((tech) => (
                   <li
