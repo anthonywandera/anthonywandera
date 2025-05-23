@@ -1,7 +1,7 @@
-import { IoMdSend } from "react-icons/io";
 import Input from "../components/input";
 import Section from "../components/Section";
 import Title from "../components/title";
+import SubmitFormButton from "../components/submit-form-button";
 
 async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
@@ -36,9 +36,7 @@ export default function Contact() {
         <Input name="email" type="email" placeholder="Email" />
         <Input name="message" placeholder="Message" textarea />
 
-        <button className="py-1.5 bg-[#222] hover:bg-[var(--primary)] transition-colors px-8 rounded font-semibold w-fit">
-          <IoMdSend />
-        </button>
+        <SubmitFormButton />
       </form>
     </Section>
   );
