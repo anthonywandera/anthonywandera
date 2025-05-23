@@ -23,7 +23,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Instagram",
     icon: <FaInstagram />,
-    url: "",
+    url: "https://www.instagram.com/to.niee",
   },
   {
     name: "X",

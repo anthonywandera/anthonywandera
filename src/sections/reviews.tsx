@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 import Title from "../components/title";
-import { clientReviewsList } from "../data/client-reviews";
+import { clientReviewsList } from "../data";
 
 export default function Reviews() {
   return (
