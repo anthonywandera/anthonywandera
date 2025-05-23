@@ -1,3 +1,5 @@
+import { IoMdSend } from "react-icons/io";
+import Input from "../components/input";
 import Section from "../components/Section";
 import Title from "../components/title";
 
@@ -23,42 +25,19 @@ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
 export default function Contact() {
   return (
-    <Section id="contact">
+    <Section
+      id="contact"
+      className="bg-[var(--primary)] mx-2 px-12 py-4 rounded-xl max-sm:px-6"
+      center={false}
+    >
       <Title title_1="Let's talk" title_2="Contact Me" />
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        <div>
-          <input
-            id="subject"
-            type="text"
-            name="subject"
-            placeholder="Subject"
-            className="border border-gray-300 rounded p-2 w-full"
-            required
-          />
-        </div>
+        <Input name="subject" placeholder="Subject" />
+        <Input name="email" type="email" placeholder="Email" />
+        <Input name="message" placeholder="Message" textarea />
 
-        <div>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="border border-gray-300 rounded p-2 w-full"
-            required
-          />
-        </div>
-
-        <div>
-          <textarea
-            id="message"
-            placeholder="Message"
-            name="message"
-            className="resize-none w-full min-h-20 border border-gray-300 rounded p-2"
-            required
-          />
-        </div>
-        <button className="bg-gray-900 py-1.5 px-8 rounded font-semibold w-fit">
-          Submit
+        <button className="py-1.5 bg-[#222] hover:bg-[var(--primary)] transition-colors px-8 rounded font-semibold w-fit">
+          <IoMdSend />
         </button>
       </form>
     </Section>
