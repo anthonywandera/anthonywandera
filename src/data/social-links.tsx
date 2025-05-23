@@ -13,7 +13,7 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Github",
     icon: <FaGithub />,
-    url: "https://github.com/anthonywandera/anthonywandera",
+    url: "https://github.com/anthonywandera",
   },
   {
     name: "LinkedIn",

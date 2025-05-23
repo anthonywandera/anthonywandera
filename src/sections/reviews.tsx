@@ -12,12 +12,12 @@ export default function Reviews() {
           <div key={review.id} className="bg-[var(--primary)] p-4 rounded">
             <h4 className="text-xs mb-2 flex items-center gap-2">
               <span>{review.name}</span>
-              {review.position && (
+              {/* {review.position && (
                 <>
                   <Dot />
                   <span>{review.position}</span>
                 </>
-              )}
+              )} */}
               {review.company && (
                 <>
                   <Dot />
