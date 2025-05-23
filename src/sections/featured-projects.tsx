@@ -13,7 +13,10 @@ export default function FeaturedProjects() {
       <Title title_1="Best of what I do" title_2="Featured Projects" />
       <Grid_3>
         {featuredProjectsList.map((project) => (
-          <div key={project.id} className="relative rounded-lg overflow-hidden">
+          <div
+            key={project.id}
+            className="relative rounded-lg overflow-hidden max-md:h-40"
+          >
             <img
               src={project.image}
               alt={project.title}
