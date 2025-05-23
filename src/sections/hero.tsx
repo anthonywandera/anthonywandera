@@ -1,3 +1,4 @@
+import Connect from "../components/connect";
 import Highlighted from "../components/highlighted";
 import Section from "../components/Section";
 import { profileData } from "../data";
@@ -17,12 +18,7 @@ export default function Hero() {
             I am <Highlighted>{name}</Highlighted>
           </p>
           <p>{profession[0]}</p>
-          <div className="flex gap-6">
-            <button className="bg-[var(--accent)] text-gray-950 px-5 py-1.5 rounded font-semibold">
-              HIRE ME
-            </button>
-            <button>MY WORK</button>
-          </div>
+          <Connect />
         </div>
       </div>
     </Section>
