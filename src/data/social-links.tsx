@@ -33,11 +33,11 @@ export const socialLinks: SocialLink[] = [
   {
     name: "Pinterest",
     icon: <FaPinterestP />,
-    url: "",
+    url: "https://www.pinterest.com/anthony_wandera",
   },
   {
     name: "Upwork",
     icon: <FaUpwork />,
-    url: "",
+    url: "https://www.upwork.com/freelancers/~0155756560a990066d?mp_source=share",
   },
 ];
