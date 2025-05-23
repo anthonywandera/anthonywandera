@@ -8,7 +8,7 @@ export default function Reviews() {
       <Title title_1="What they say" title_2="Client Reviews" />
       <div className="grid grid-cols-3 gap-4">
         {clientReviewsList.map((review) => (
-          <div key={review.id} className="bg-gray-900 p-2 rounded">
+          <div key={review.id} className="bg-[var(--primary)] p-2 rounded">
             <p className="text-xs mb-2">{review.name}</p>
             <p>{review.message}</p>
           </div>
