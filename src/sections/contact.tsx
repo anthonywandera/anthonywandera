@@ -2,28 +2,40 @@ import Input from "../components/input";
 import Section from "../components/Section";
 import Title from "../components/title";
 import SubmitFormButton from "../components/submit-form-button";
-
-async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  const formData = new FormData(e.currentTarget);
-  const data = Object.fromEntries(formData);
-  data.date = new Date().toISOString();
-
-  const response = await fetch(
-    "https://anthonywandera-26338-default-rtdb.firebaseio.com/messages.json",
-    {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(data),
-    }
-  );
-
-  console.log(response);
-}
+import { useState } from "react";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = Object.fromEntries(formData);
+    data.date = new Date().toISOString();
+
+    // start the submission
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(
+        "https://anthonywandera-26338-default-rtdb.firebaseio.com/messages.json",
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+          body: JSON.stringify(data),
+        }
+      );
+
+      // complete submission
+      setIsSubmitting(false);
+
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <Section
       id="contact"
@@ -36,7 +48,7 @@ export default function Contact() {
         <Input name="email" type="email" placeholder="Email" />
         <Input name="message" placeholder="Message" textarea />
 
-        <SubmitFormButton />
+        <SubmitFormButton isSubmitting={isSubmitting} />
       </form>
     </Section>
   );
