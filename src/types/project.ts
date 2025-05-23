@@ -7,8 +7,8 @@ export interface Project {
   technologies: string[];
   category: "web" | "3d" | "uiux";
   featured?: boolean;
-  startDate?: string;
-  endDate?: string;
+  ongoing?: boolean;
+  duration?: number; // in days
   image?: string;
   review?: ProjectReview[];
   link?: string;
