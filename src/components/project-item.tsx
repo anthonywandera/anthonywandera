@@ -3,7 +3,7 @@ import Dot from "./dot";
 
 export default function ProjectItem({ project }: { project: Project }) {
   return (
-    <button className="bg-[var(--primary)] p-2 rounded">
+    <button className="bg-[var(--primary)] p-2 rounded text-left">
       <h3 className="mb-2 flex gap-2 items-center font-semibold">
         <span>{project.title}</span>
         <Dot />
