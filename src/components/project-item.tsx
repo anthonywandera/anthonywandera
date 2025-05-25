@@ -74,12 +74,25 @@ export default function ProjectItem({ project }: { project: Project }) {
                 <span className="text-xs text-green-300">Ongoing</span>
               </>
             )}
+            <a href={project.link} className="text-blue-800 font-thin ml-auto">
+              Visit Site &rarr;
+            </a>
           </h3>
           <p className="mb-2 text-sm">
             {project.description.length > 150
               ? project.description.slice(0, 150) + "..."
               : project.description}
           </p>
+          <ul className="flex gap-2 flex-wrap text-xs">
+            {project.technologies.map((tech) => (
+              <li
+                key={tech}
+                className="py-0.5 px-2 rounded bg-[var(--secondary)] text-[var(--secondary-foreground)]"
+              >
+                {tech}
+              </li>
+            ))}
+          </ul>
         </div>
       </dialog>
     </>
