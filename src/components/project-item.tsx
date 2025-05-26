@@ -60,12 +60,14 @@ export default function ProjectItem({ project }: { project: Project }) {
         }}
         className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%]"
       >
-        <div className="p-2 rounded bg-[var(--primary)] text-[var(--primary-foreground)]">
-          <img
-            src={project.image}
-            alt={project.title}
-            className="h-60 w-full object-cover object-center rounded"
-          />
+        <div className="p-2 rounded bg-[var(--secondary)] text-[var(--primary-foreground)]">
+          {project.image && (
+            <img
+              src={project.image}
+              alt={project.title}
+              className="h-60 w-full object-cover object-center rounded"
+            />
+          )}
           <div className="flex flex-warp mb-2 justify-between">
             <h3 className="flex gap-2 items-center font-semibold">
               <span>{project.title}</span>
@@ -91,7 +93,7 @@ export default function ProjectItem({ project }: { project: Project }) {
             {project.technologies.map((tech) => (
               <li
                 key={tech}
-                className="py-0.5 px-2 rounded bg-[var(--secondary)] text-[var(--secondary-foreground)]"
+                className="py-0.5 px-2 rounded bg-[var(--primary)] text-[var(--primary-foreground)]"
               >
                 {tech}
               </li>
