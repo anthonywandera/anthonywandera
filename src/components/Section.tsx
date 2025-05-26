@@ -16,7 +16,10 @@ export default function Section({
   center = true,
 }: PropTypes) {
   const controls = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.2, triggerOnce: true });
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   useEffect(() => {
     if (inView) {
