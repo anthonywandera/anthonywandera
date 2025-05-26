@@ -17,7 +17,7 @@ export default function Section({
 }: PropTypes) {
   const controls = useAnimation();
   const [ref, inView] = useInView({
-    threshold: 0.2,
+    threshold: 0.05,
     triggerOnce: true,
   });
 
@@ -35,7 +35,7 @@ export default function Section({
     <motion.section
       ref={ref}
       id={id}
-      initial={{ y: 100, opacity: 0 }}
+      initial={{ y: 80, opacity: 0 }}
       animate={controls}
       className={`mb-10 ${center ? "mx-14 max-sm:mx-6" : ""} ${className}`}
     >
