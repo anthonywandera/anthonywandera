@@ -4,6 +4,10 @@ import Title from "../components/title";
 import SubmitFormButton from "../components/submit-form-button";
 import { useState } from "react";
 
+import emailjs from "@emailjs/browser";
+
+emailjs.init("fwLvGyFnBCjhDoPmO");
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -16,21 +20,10 @@ export default function Contact() {
     // start the submission
     setIsSubmitting(true);
     try {
-      const response = await fetch(
-        "https://anthonywandera-26338-default-rtdb.firebaseio.com/messages.json",
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          method: "POST",
-          body: JSON.stringify(data),
-        }
-      );
+      await emailjs.send("service_81bc80k", "template_kuiwc6u", data);
 
       // complete submission
       setIsSubmitting(false);
-
-      console.log(response);
     } catch (err) {
       console.log(err);
     }
