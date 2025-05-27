@@ -60,7 +60,7 @@ export default function ProjectItem({ project }: { project: Project }) {
         }}
         className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%]"
       >
-        <div className="p-2 rounded bg-[var(--secondary)] text-[var(--primary-foreground)]">
+        <div className="p-2 rounded bg-[var(--background)] text-[var(--primary-foreground)]">
           {project.image && (
             <img
               src={project.image}
