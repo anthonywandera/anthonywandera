@@ -3,7 +3,7 @@ import Dot from "../components/dot";
 import Section from "../components/Section";
 import Title from "../components/title";
 import { clientReviewsList } from "../data";
-import { FaRegSadTear } from "react-icons/fa";
+import NoContentFallback from "../components/no-content-fallback";
 
 export default function Reviews() {
   const [page, setPage] = useState(1);
@@ -51,12 +51,7 @@ export default function Reviews() {
           </button>
         )
       ) : (
-        <div className="flex items-center justify-center text-[#333] border p-5 rounded-lg">
-          <div className="flex flex-col items-center gap-2">
-            <FaRegSadTear className="text-6xl" />
-            <p>Nothing to show</p>
-          </div>
-        </div>
+        <NoContentFallback />
       )}
     </Section>
   );

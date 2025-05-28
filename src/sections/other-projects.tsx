@@ -4,6 +4,7 @@ import ProjectItem from "../components/project-item";
 import Section from "../components/Section";
 import Title from "../components/title";
 import { projectsList } from "../data";
+import NoContentFallback from "../components/no-content-fallback";
 
 export default function OtherProjects() {
   const [page, setPage] = useState(1);
@@ -26,13 +27,17 @@ export default function OtherProjects() {
             <ProjectItem key={project.id} project={project} />
           ))}
         </Grid_3>
-        {totalPages != page && (
-          <button
-            onClick={handleLoadMore}
-            className="bg-[var(--primary)] rounded p-3"
-          >
-            Load More
-          </button>
+        {projectsList.length > 0 ? (
+          totalPages != page && (
+            <button
+              onClick={handleLoadMore}
+              className="bg-[var(--primary)] rounded p-3"
+            >
+              Load More
+            </button>
+          )
+        ) : (
+          <NoContentFallback />
         )}
       </div>
     </Section>
