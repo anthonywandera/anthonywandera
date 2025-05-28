@@ -3,6 +3,7 @@ import Dot from "../components/dot";
 import Section from "../components/Section";
 import Title from "../components/title";
 import { clientReviewsList } from "../data";
+import { FaRegSadTear } from "react-icons/fa";
 
 export default function Reviews() {
   const [page, setPage] = useState(1);
@@ -40,13 +41,22 @@ export default function Reviews() {
           </div>
         ))}
       </div>
-      {totalPages != page && (
-        <button
-          onClick={handleLoadMore}
-          className="bg-[var(--primary)] rounded p-3 w-full mt-4"
-        >
-          Load More
-        </button>
+      {clientReviewsList.length > 0 ? (
+        totalPages != page && (
+          <button
+            onClick={handleLoadMore}
+            className="bg-[var(--primary)] rounded p-3 w-full mt-4"
+          >
+            Load More
+          </button>
+        )
+      ) : (
+        <div className="flex items-center justify-center text-[#333] border p-5 rounded-lg">
+          <div className="flex flex-col items-center gap-2">
+            <FaRegSadTear className="text-6xl" />
+            <p>Nothing to show</p>
+          </div>
+        </div>
       )}
     </Section>
   );
