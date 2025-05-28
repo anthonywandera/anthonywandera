@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Project } from "../types";
 import Dot from "./dot";
+import Highlighted from "./highlighted";
 
 export default function ProjectItem({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
@@ -38,6 +39,12 @@ export default function ProjectItem({ project }: { project: Project }) {
           <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
             {project.category}
           </span>
+          {project.featured && (
+            <>
+              <Dot />
+              <Highlighted className="text-xs">Featured</Highlighted>
+            </>
+          )}
           {project.ongoing && (
             <>
               <Dot />
@@ -75,6 +82,12 @@ export default function ProjectItem({ project }: { project: Project }) {
               <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
                 {project.category}
               </span>
+              {project.featured && (
+                <>
+                  <Dot />
+                  <Highlighted className="text-xs">Featured</Highlighted>
+                </>
+              )}
               {project.ongoing && (
                 <>
                   <Dot />
