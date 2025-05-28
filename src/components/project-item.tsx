@@ -33,7 +33,7 @@ export default function ProjectItem({ project }: { project: Project }) {
         onClick={handleClick}
         className="bg-[var(--primary)] p-2 rounded text-left"
       >
-        <h3 className="mb-2 flex gap-2 items-center font-semibold">
+        <h3 className="mb-2 flex flex-warp gap-2 items-center font-semibold">
           <span>{project.title}</span>
           <Dot />
           <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
