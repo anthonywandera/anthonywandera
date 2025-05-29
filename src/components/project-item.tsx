@@ -1,31 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { Project } from "../types";
 import ProjectItemDetails from "./project-item-details";
 import ProjectInfoStatus from "./project-info-status";
+import Dialog from "./dialog";
 
 export default function ProjectItem({ project }: { project: Project }) {
-  const [showModal, setShowModal] = useState(false);
-  const dialogModal = useRef<HTMLDialogElement>(null);
+  const dialogModal = useRef<{ open(): void; close(): void }>(null);
 
   function handleClick() {
-    setShowModal(true);
+    dialogModal.current?.open();
   }
-
-  useEffect(() => {
-    const dialogEl = dialogModal.current;
-
-    if (showModal) dialogEl?.showModal();
-
-    dialogEl?.addEventListener("click", (e) => {
-      const targetEl = e.target as HTMLElement;
-
-      if (targetEl.id === "dialog") {
-        dialogEl.close();
-        setShowModal(false);
-        return;
-      }
-    });
-  }, [showModal]);
 
   return (
     <>
@@ -41,16 +25,9 @@ export default function ProjectItem({ project }: { project: Project }) {
         </p>
       </button>
 
-      <dialog
-        id="dialog"
-        ref={dialogModal}
-        onClose={() => {
-          setShowModal(false);
-        }}
-        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%] [&::backdrop]:backdrop-blur-xs"
-      >
+      <Dialog ref={dialogModal}>
         <ProjectItemDetails project={project} />
-      </dialog>
+      </Dialog>
     </>
   );
 }
