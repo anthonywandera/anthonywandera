@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Project } from "../types";
-import Dot from "./dot";
-import Highlighted from "./highlighted";
 import ProjectItemDetails from "./project-item-details";
+import ProjectInfoStatus from "./project-info-status";
 
 export default function ProjectItem({ project }: { project: Project }) {
   const [showModal, setShowModal] = useState(false);
@@ -34,25 +33,7 @@ export default function ProjectItem({ project }: { project: Project }) {
         onClick={handleClick}
         className="bg-[var(--primary)] p-2 rounded text-left"
       >
-        <h3 className="mb-2 flex flex-warp gap-2 items-center font-semibold">
-          <span>{project.title}</span>
-          <Dot />
-          <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
-            {project.category}
-          </span>
-          {project.featured && (
-            <>
-              <Dot />
-              <Highlighted className="text-xs">Featured</Highlighted>
-            </>
-          )}
-          {project.ongoing && (
-            <>
-              <Dot />
-              <span className="text-xs text-green-300">Ongoing</span>
-            </>
-          )}
-        </h3>
+        <ProjectInfoStatus project={project} />
         <p className="mb-2 text-sm text-[var(--primary-foreground)]">
           {project.description.length > 150
             ? project.description.slice(0, 150) + "..."

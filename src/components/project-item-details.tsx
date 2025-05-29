@@ -1,11 +1,10 @@
 import { Project } from "../types";
-import Dot from "./dot";
-import Highlighted from "./highlighted";
 import NoContentFallback from "./no-content-fallback";
+import ProjectInfoStatus from "./project-info-status";
 
 export default function ProjectItemDetails({ project }: { project: Project }) {
   return (
-    <div className="p-2 rounded bg-[var(--background)] text-[var(--primary-foreground)]">
+    <div className="p-2 rounded bg-[var(--background)] text-[var(--primary-foreground)] grid grid-cols-2 gap-x-4 gap-y-1 max-sm:grid-cols-1">
       {project.image ? (
         <img
           src={project.image}
@@ -15,43 +14,27 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
       ) : (
         <NoContentFallback fallback="No image to show" />
       )}
-      <div className="flex flex-warp mb-2 justify-between">
-        <h3 className="flex gap-2 items-center font-semibold">
-          <span>{project.title}</span>
-          <Dot />
-          <span className="bg-[var(--primary-foreground)] text-[var(--primary)] text-xs px-2 py-0.5 rounded-full">
-            {project.category}
-          </span>
-          {project.featured && (
-            <>
-              <Dot />
-              <Highlighted className="text-xs">Featured</Highlighted>
-            </>
+      <div>
+        <div className="flex justify-between">
+          <ProjectInfoStatus project={project} />
+          {project.link && (
+            <a href={project.link} className="text-blue-800 font-thin">
+              Visit Site &rarr;
+            </a>
           )}
-          {project.ongoing && (
-            <>
-              <Dot />
-              <span className="text-xs text-green-300">Ongoing</span>
-            </>
-          )}
-        </h3>
-        {project.link && (
-          <a href={project.link} className="text-blue-800 font-thin">
-            Visit Site &rarr;
-          </a>
-        )}
+        </div>
+        <p className="mb-4 text-sm">{project.description}</p>
+        <ul className="flex gap-2 flex-wrap text-xs">
+          {project.technologies.map((tech) => (
+            <li
+              key={tech}
+              className="py-0.5 px-2 rounded bg-[var(--primary)] text-[var(--primary-foreground)]"
+            >
+              {tech}
+            </li>
+          ))}
+        </ul>
       </div>
-      <p className="mb-2 text-sm">{project.description}</p>
-      <ul className="flex gap-2 flex-wrap text-xs">
-        {project.technologies.map((tech) => (
-          <li
-            key={tech}
-            className="py-0.5 px-2 rounded bg-[var(--primary)] text-[var(--primary-foreground)]"
-          >
-            {tech}
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }
