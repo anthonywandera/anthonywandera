@@ -19,7 +19,7 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
         {project.link && (
           <a
             href={project.link}
-            className="text-blue-800 font-thin mb-1 text-sm"
+            className="text-blue-400 font-thin mb-1 text-sm"
           >
             Visit Site &rarr;
           </a>
