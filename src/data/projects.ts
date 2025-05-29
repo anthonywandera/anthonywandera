@@ -17,6 +17,7 @@ export const projectsList: Project[] = [
     id: "2",
     title: "E-commerce Website",
     category: "3d",
+    link: "#",
     image:
       "https://images.unsplash.com/photo-1659079631665-eb95370fb173?q=80&w=1630&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:

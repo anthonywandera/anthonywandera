@@ -15,14 +15,16 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
         <NoContentFallback fallback="No image to show" />
       )}
       <div>
-        <div className="flex justify-between">
-          <ProjectInfoStatus project={project} />
-          {project.link && (
-            <a href={project.link} className="text-blue-800 font-thin">
-              Visit Site &rarr;
-            </a>
-          )}
-        </div>
+        <ProjectInfoStatus project={project} />
+        {project.link && (
+          <a
+            href={project.link}
+            className="text-blue-800 font-thin mb-1 text-sm"
+          >
+            Visit Site &rarr;
+          </a>
+        )}
+
         <p className="mb-4 text-sm">{project.description}</p>
         <ul className="flex gap-2 flex-wrap text-xs">
           {project.technologies.map((tech) => (
