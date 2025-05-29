@@ -8,7 +8,7 @@ export default function Hero() {
 
   return (
     <Section id="home">
-      <div className="flex gap-24 min-h-[70vh] items-center flex-wrap max-sm:gap-4">
+      <div className="flex gap-24 min-h-[70vh] items-center flex-wrap max-md:gap-4">
         <div className="relative">
           <img
             src={image}
