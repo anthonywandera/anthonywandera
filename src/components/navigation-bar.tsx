@@ -14,7 +14,7 @@ export default function NavigationBar() {
       <div className="relative">
         <menu
           className={`${
-            showMenu ? "" : "hidden"
+            showMenu ? "" : "max-md:hidden"
           } flex gap-4 max-md:absolute max-md:-bottom-1 max-md:right-0 max-md:translate-y-full max-md:flex-col max-md:bg-[var(--primary)] max-md:p-4 max-md:rounded **:text-left`}
         >
           <NavigationButton to="home">Home</NavigationButton>
