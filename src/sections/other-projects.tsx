@@ -22,20 +22,22 @@ export default function OtherProjects() {
       <Title title_1="More of my work" title_2="Other Projects" />
 
       <div className="flex flex-col gap-8">
-        <Grid_3>
-          {projectsList.slice(0, projectsPerPage * page).map((project) => (
-            <ProjectItem key={project.id} project={project} />
-          ))}
-        </Grid_3>
         {projectsList.length > 0 ? (
-          totalPages != page && (
-            <button
-              onClick={handleLoadMore}
-              className="bg-[var(--primary)] rounded p-3"
-            >
-              Load More
-            </button>
-          )
+          <>
+            <Grid_3>
+              {projectsList.slice(0, projectsPerPage * page).map((project) => (
+                <ProjectItem key={project.id} project={project} />
+              ))}
+            </Grid_3>
+            {totalPages != page && (
+              <button
+                onClick={handleLoadMore}
+                className="bg-[var(--primary)] rounded p-3"
+              >
+                Load More
+              </button>
+            )}
+          </>
         ) : (
           <NoContentFallback />
         )}
