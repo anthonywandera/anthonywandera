@@ -47,7 +47,7 @@ export default function ProjectItem({ project }: { project: Project }) {
         onClose={() => {
           setShowModal(false);
         }}
-        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%]"
+        className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%] [&::backdrop]:backdrop-blur-xs"
       >
         <ProjectItemDetails project={project} />
       </dialog>
