@@ -8,7 +8,7 @@ export default function Services() {
     <Section id="services">
       <Title title_1="What I do" title_2="My Services" />
 
-      <Grid_3 className="gap-14 max-md:gap-4 max-sm:grid-rows-3">
+      <Grid_3 className="gap-6 max-md:gap-4 max-sm:grid-rows-3">
         {servicesList.map((service) => (
           <div
             key={service.title}

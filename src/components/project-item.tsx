@@ -15,7 +15,7 @@ export default function ProjectItem({ project }: { project: Project }) {
     <>
       <button
         onClick={handleClick}
-        className="bg-[var(--primary)] p-2 rounded text-left"
+        className="bg-[var(--primary)] p-2 rounded text-left flex flex-col"
       >
         <ProjectInfoStatus project={project} />
         <p className="mb-2 text-sm text-[var(--primary-foreground)]">
