@@ -19,11 +19,15 @@ export default function FeaturedProjects() {
               key={project.id}
               className="relative rounded-lg overflow-hidden max-md:h-40"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover object-center"
-              />
+              {project.image ? (
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover object-center"
+                />
+              ) : (
+                <NoContentFallback fallback="No image to show" />
+              )}
               <div className="absolute bottom-0 w-full p-1 bg-linear-[#0000,#0005_10%,var(--primary)_90%] ">
                 <h3 className="mb-2 flex gap-2 items-center font-semibold">
                   <span>{project.title}</span>

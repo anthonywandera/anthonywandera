@@ -1,16 +1,19 @@
 import { Project } from "../types";
 import Dot from "./dot";
 import Highlighted from "./highlighted";
+import NoContentFallback from "./no-content-fallback";
 
 export default function ProjectItemDetails({ project }: { project: Project }) {
   return (
     <div className="p-2 rounded bg-[var(--background)] text-[var(--primary-foreground)]">
-      {project.image && (
+      {project.image ? (
         <img
           src={project.image}
           alt={project.title}
           className="h-60 w-full object-cover object-center rounded"
         />
+      ) : (
+        <NoContentFallback fallback="No image to show" />
       )}
       <div className="flex flex-warp mb-2 justify-between">
         <h3 className="flex gap-2 items-center font-semibold">
