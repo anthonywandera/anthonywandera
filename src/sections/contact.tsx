@@ -14,16 +14,16 @@ export default function Contact() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const email = formData.get("email");
-    const emailURI = encodeURI(email as string);
+    // const email = formData.get("email");
+    // const emailURI = encodeURI(email as string);
 
-    const emailVallidityRes = await fetch(
-      `https://disify.com/api/email/${emailURI}`
-    ).then((res) => res.json());
+    // const emailVallidityRes = await fetch(
+    //   `https://disify.com/api/email/${emailURI}`
+    // ).then((res) => res.json());
 
-    console.log(emailVallidityRes);
+    // console.log(emailVallidityRes);
 
-    return;
+    // return;
 
     const data = Object.fromEntries(formData);
     data.date = new Date().toISOString();
