@@ -4,6 +4,14 @@ interface InputProps {
   required?: boolean;
   textarea?: boolean;
   type?: "text" | "email";
+  validation?: {
+    min?: number;
+    max?: number;
+    minLength?: number;
+    maxLength?: number;
+    whitespace?: boolean;
+    specialCharacters?: string;
+  };
 }
 
 export default function Input({
