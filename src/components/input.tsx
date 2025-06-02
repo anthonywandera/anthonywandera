@@ -10,7 +10,7 @@ interface InputProps {
     minLength?: number;
     maxLength?: number;
     whitespace?: boolean;
-    specialCharacters?: string;
+    exclude?: string;
   };
 }
 
