@@ -12,5 +12,15 @@ export function validate(
       error: `Should not exceed ${validation.max} characters`,
     };
   }
+
+  // check for min length
+  if (validation.minLength && value.length < validation.minLength) {
+    return {
+      value,
+      valid: false,
+      error: `At least ${validation.max} characters are required`,
+    };
+  }
+
   return { value, valid: true, error: "" };
 }
