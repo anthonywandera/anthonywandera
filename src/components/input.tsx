@@ -1,11 +1,4 @@
-interface Validation {
-  min?: number;
-  max?: number;
-  minLength?: number;
-  maxLength?: number;
-  whitespace?: boolean;
-  exclude?: string;
-}
+import { Validation } from "../types";
 
 interface InputProps {
   name: string;
@@ -14,13 +7,6 @@ interface InputProps {
   textarea?: boolean;
   type?: "text" | "email";
   validation?: Validation;
-}
-
-function validate(
-  value: string,
-  validation?: Validation
-): { valid: boolean; value: string; error: string } {
-  return { value, valid: true, error: "" };
 }
 
 export default function Input({
