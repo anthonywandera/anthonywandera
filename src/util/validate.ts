@@ -1,9 +1,11 @@
 import { Validation } from "../types";
 
 export function validate(
-  value: string,
+  val: string,
   validation: Validation
 ): { valid: boolean; value: string; error: string } {
+  const value = val.trim();
+
   // check max length
   if (validation.maxLength && value.length > validation.maxLength) {
     return {
@@ -20,6 +22,11 @@ export function validate(
       valid: false,
       error: `At least ${validation.max} characters are required`,
     };
+  }
+
+  // check for whitespace
+  if (!validation.whitespace && value.includes(" ")) {
+    return { value, valid: false, error: "Should not include any spaces" };
   }
 
   return { value, valid: true, error: "" };
