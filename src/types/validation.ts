@@ -5,4 +5,5 @@ export interface Validation {
   maxLength?: number;
   whitespace?: boolean;
   exclude?: string;
+  email?: boolean;
 }
