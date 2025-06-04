@@ -1,9 +1,12 @@
+import { Validation } from "../types";
+
 interface InputProps {
   name: string;
   placeholder: string;
   required?: boolean;
   textarea?: boolean;
   type?: "text" | "email";
+  validation?: Validation;
 }
 
 export default function Input({
