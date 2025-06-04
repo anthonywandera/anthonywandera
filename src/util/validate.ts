@@ -10,7 +10,7 @@ export function validate(
   }
 
   // check email format
-  if (validation.email && !/^[^\s@]+@[^\s@]+\.[^\s@]$/.test(value.trim())) {
+  if (validation.email && !/^[^\s@]+@[^\s@]+\.[^\s@]/.test(value.trim())) {
     return { value, valid: false, error: "Please enter the correct format" };
   }
 

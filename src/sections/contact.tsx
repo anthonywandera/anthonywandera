@@ -51,10 +51,20 @@ export default function Contact() {
         <Input
           name="subject"
           placeholder="Subject"
-          validation={{ minLength: 6, whitespace: true }}
+          validation={{ minLength: 5, whitespace: true }}
         />
-        <Input name="email" type="email" placeholder="Email" />
-        <Input name="message" placeholder="Message" textarea />
+        <Input
+          name="email"
+          type="email"
+          placeholder="Email"
+          validation={{ email: true }}
+        />
+        <Input
+          name="message"
+          placeholder="Message"
+          validation={{ minLength: 25, maxLength: 400, whitespace: true }}
+          textarea
+        />
 
         <SubmitFormButton isSubmitting={isSubmitting} />
       </form>
