@@ -1,13 +1,16 @@
 import { Validation } from "../types";
 
 export function validate(
-  val: string,
+  value: string,
   validation: Validation
 ): { valid: boolean; value: string; error: string } {
-  const value = val.trim();
+  // check email format
+  if (validation.email && !/^[^\s@]+@[^\s@]+\.[^\s@]$/.test(value.trim())) {
+    return { value, valid: false, error: "Please enter the correct format" };
+  }
 
   // check max length
-  if (validation.maxLength && value.length > validation.maxLength) {
+  if (validation.maxLength && value.trim().length > validation.maxLength) {
     return {
       value,
       valid: false,
@@ -16,7 +19,7 @@ export function validate(
   }
 
   // check for min length
-  if (validation.minLength && value.length < validation.minLength) {
+  if (validation.minLength && value.trim().length < validation.minLength) {
     return {
       value,
       valid: false,
@@ -25,7 +28,7 @@ export function validate(
   }
 
   // check for whitespace
-  if (!validation.whitespace && value.includes(" ")) {
+  if (!validation.whitespace && value.trim().includes(" ")) {
     return { value, valid: false, error: "Should not include any spaces" };
   }
 
