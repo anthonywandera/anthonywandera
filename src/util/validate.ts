@@ -14,7 +14,7 @@ export function validate(
     return {
       value,
       valid: false,
-      error: `Should not exceed ${validation.max} characters`,
+      error: `Should not exceed ${validation.maxLength} characters`,
     };
   }
 
@@ -23,7 +23,7 @@ export function validate(
     return {
       value,
       valid: false,
-      error: `At least ${validation.max} characters are required`,
+      error: `At least ${validation.minLength} characters are required`,
     };
   }
 

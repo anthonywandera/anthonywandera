@@ -48,7 +48,11 @@ export default function Contact() {
     >
       <Title title_1="Let's talk" title_2="Contact Me" />
       <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-        <Input name="subject" placeholder="Subject" />
+        <Input
+          name="subject"
+          placeholder="Subject"
+          validation={{ minLength: 6, whitespace: true }}
+        />
         <Input name="email" type="email" placeholder="Email" />
         <Input name="message" placeholder="Message" textarea />
 
