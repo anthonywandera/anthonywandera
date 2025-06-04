@@ -4,6 +4,11 @@ export function validate(
   value: string,
   validation: Validation
 ): { valid: boolean; value: string; error: string } {
+  // check if empty
+  if (!value.trim()) {
+    return { value, valid: false, error: "This field is required" };
+  }
+
   // check email format
   if (validation.email && !/^[^\s@]+@[^\s@]+\.[^\s@]$/.test(value.trim())) {
     return { value, valid: false, error: "Please enter the correct format" };
