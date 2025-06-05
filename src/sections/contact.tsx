@@ -26,6 +26,11 @@ export default function Contact() {
     // return;
 
     const data = Object.fromEntries(formData);
+
+    // check for any invalid inputs
+    for ([key, value] of Object.entries(data)) {
+    }
+
     data.date = new Date().toISOString();
 
     // start the submission
