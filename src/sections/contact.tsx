@@ -5,6 +5,7 @@ import SubmitFormButton from "../components/submit-form-button";
 import { useState } from "react";
 
 import emailjs from "@emailjs/browser";
+import { validate } from "../util/validate";
 
 emailjs.init("fwLvGyFnBCjhDoPmO");
 
@@ -14,6 +15,7 @@ export default function Contact() {
   // check for any invalid inputs
   const subjectValidation = { minLength: 5, whitespace: true };
   const emailValidation = { email: true };
+  const messageValidation = { minLength: 25, maxLength: 400, whitespace: true };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -31,8 +33,14 @@ export default function Contact() {
 
     const data = Object.fromEntries(formData);
 
-    // for ([key, value] of Object.entries(data)) {
-    // }
+    for (const [key, value] of Object.entries(data)) {
+      // check subject
+      if (key === "subject") {
+        const val = validate(value as string, subjectValidation);
+
+        if (!val.valid) return;
+      }
+    }
 
     data.date = new Date().toISOString();
 
@@ -70,7 +78,7 @@ export default function Contact() {
         <Input
           name="message"
           placeholder="Message"
-          validation={{ minLength: 25, maxLength: 400, whitespace: true }}
+          validation={messageValidation}
           textarea
         />
 
