@@ -47,6 +47,13 @@ export default function Contact() {
 
         if (!val.valid) return;
       }
+
+      // check email
+      if (key === "email") {
+        const val = validate(value as string, emailValidation);
+
+        if (!val.valid) return;
+      }
     }
 
     data.date = new Date().toISOString();
