@@ -50,6 +50,9 @@ export default function Contact() {
 
       // check email
       if (key === "email") {
+        // check email validity
+        // ....
+
         const val = validate(value as string, emailValidation);
 
         if (!val.valid) return;
