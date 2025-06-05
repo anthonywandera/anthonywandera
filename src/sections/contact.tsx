@@ -11,6 +11,10 @@ emailjs.init("fwLvGyFnBCjhDoPmO");
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // check for any invalid inputs
+  const subjectValidation = { minLength: 5, whitespace: true };
+  const emailValidation = { email: true };
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -27,9 +31,8 @@ export default function Contact() {
 
     const data = Object.fromEntries(formData);
 
-    // check for any invalid inputs
-    for ([key, value] of Object.entries(data)) {
-    }
+    // for ([key, value] of Object.entries(data)) {
+    // }
 
     data.date = new Date().toISOString();
 
@@ -56,13 +59,13 @@ export default function Contact() {
         <Input
           name="subject"
           placeholder="Subject"
-          validation={{ minLength: 5, whitespace: true }}
+          validation={subjectValidation}
         />
         <Input
           name="email"
           type="email"
           placeholder="Email"
-          validation={{ email: true }}
+          validation={emailValidation}
         />
         <Input
           name="message"
