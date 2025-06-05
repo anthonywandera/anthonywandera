@@ -40,6 +40,13 @@ export default function Contact() {
 
         if (!val.valid) return;
       }
+
+      // check message
+      if (key === "message") {
+        const val = validate(value as string, messageValidation);
+
+        if (!val.valid) return;
+      }
     }
 
     data.date = new Date().toISOString();
