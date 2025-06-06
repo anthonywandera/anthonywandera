@@ -40,17 +40,6 @@ export default function Contact() {
 
       // check email
       if (key === "email") {
-        // check email validity
-        // ....
-
-        const emailURI = encodeURI(value as string);
-
-        const emailVallidityRes = await fetch(
-          `https://disify.com/api/email/${emailURI}`
-        ).then((res) => res.json());
-
-        console.log(emailVallidityRes);
-
         const val = validate(value as string, emailValidation);
 
         if (!val.valid) return;
