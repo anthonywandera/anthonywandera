@@ -20,16 +20,6 @@ export default function Contact() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    // const email = formData.get("email");
-    // const emailURI = encodeURI(email as string);
-
-    // const emailVallidityRes = await fetch(
-    //   `https://disify.com/api/email/${emailURI}`
-    // ).then((res) => res.json());
-
-    // console.log(emailVallidityRes);
-
-    // return;
 
     const data = Object.fromEntries(formData);
 
@@ -53,6 +43,14 @@ export default function Contact() {
         // check email validity
         // ....
 
+        const emailURI = encodeURI(value as string);
+
+        const emailVallidityRes = await fetch(
+          `https://disify.com/api/email/${emailURI}`
+        ).then((res) => res.json());
+
+        console.log(emailVallidityRes);
+
         const val = validate(value as string, emailValidation);
 
         if (!val.valid) return;
@@ -60,6 +58,8 @@ export default function Contact() {
     }
 
     data.date = new Date().toISOString();
+
+    return;
 
     // start the submission
     setIsSubmitting(true);
