@@ -48,8 +48,6 @@ export default function Contact() {
 
     data.date = new Date().toISOString();
 
-    return;
-
     // start the submission
     setIsSubmitting(true);
     try {
