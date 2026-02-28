@@ -20,7 +20,7 @@ export default function ProjectItem({ project }: { project: Project }) {
         <ProjectInfoStatus project={project} />
         <p className="mb-2 text-sm text-[var(--primary-foreground)]">
           {project.description.length > 150
-            ? project.description.slice(0, 150) + "..."
+            ? project.description.slice(0, 500) + "..."
             : project.description}
         </p>
       </button>

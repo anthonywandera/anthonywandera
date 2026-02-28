@@ -4,10 +4,8 @@ import Title from "../components/title";
 import SubmitFormButton from "../components/submit-form-button";
 import { useState } from "react";
 
-import emailjs from "@emailjs/browser";
 import { validate } from "../util/validate";
-
-emailjs.init("fwLvGyFnBCjhDoPmO");
+import { supabase } from "../supabase-client";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -19,7 +17,8 @@ export default function Contact() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    const formEl = e.currentTarget;
+    const formData = new FormData(formEl);
 
     const data = Object.fromEntries(formData);
 
@@ -46,15 +45,22 @@ export default function Contact() {
       }
     }
 
-    data.date = new Date().toISOString();
-
     // start the submission
     setIsSubmitting(true);
     try {
-      await emailjs.send("service_81bc80k", "template_kuiwc6u", data);
+      const res = await supabase.from("messages").insert(data);
 
       // complete submission
       setIsSubmitting(false);
+
+      // reset form
+      if (!res.error) {
+        alert("Message sent successfully!");
+
+        formEl.reset();
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
     } catch (err) {
       console.log(err);
     }

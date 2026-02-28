@@ -21,7 +21,7 @@ export default function FeaturedProjectItem({ project }: { project: Project }) {
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full aspect-video object-cover object-center"
           />
         ) : (
           <NoContentFallback fallback="No image to show" />
@@ -39,6 +39,7 @@ export default function FeaturedProjectItem({ project }: { project: Project }) {
               {project.description}
             </p>
           </div>
+
           <ul className="flex gap-2 flex-wrap text-xs">
             {project.technologies.map((tech) => (
               <li

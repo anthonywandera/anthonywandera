@@ -26,6 +26,7 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
         )}
 
         <p className="mb-4 text-sm">{project.description}</p>
+
         <ul className="flex gap-2 flex-wrap text-xs">
           {project.technologies.map((tech) => (
             <li
