@@ -9,11 +9,12 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
         <img
           src={project.image}
           alt={project.title}
-          className="h-60 w-full object-cover object-center rounded"
+          className="h-full w-full object-cover object-center rounded"
         />
       ) : (
         <NoContentFallback fallback="No image to show" />
       )}
+
       <div>
         <ProjectInfoStatus project={project} />
         {project.link && (
@@ -25,7 +26,12 @@ export default function ProjectItemDetails({ project }: { project: Project }) {
           </a>
         )}
 
-        <p className="mb-4 text-sm">{project.description}</p>
+        <p
+          className="mb-4 text-sm"
+          dangerouslySetInnerHTML={{
+            __html: project.description.replace(/\n/g, "<br />"),
+          }}
+        />
 
         <ul className="flex gap-2 flex-wrap text-xs">
           {project.technologies.map((tech) => (

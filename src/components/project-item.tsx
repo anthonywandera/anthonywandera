@@ -18,11 +18,16 @@ export default function ProjectItem({ project }: { project: Project }) {
         className="bg-[var(--primary)] p-2 rounded text-left flex flex-col"
       >
         <ProjectInfoStatus project={project} />
-        <p className="mb-2 text-sm text-[var(--primary-foreground)]">
-          {project.description.length > 150
-            ? project.description.slice(0, 500) + "..."
-            : project.description}
-        </p>
+        <p
+          className="mb-2 text-sm text-[var(--primary-foreground)]"
+          dangerouslySetInnerHTML={{
+            __html:
+              project.description.length > 1000
+                ? project.description.replace(/\n/g, "<br />").slice(0, 1000) +
+                  "..."
+                : project.description,
+          }}
+        ></p>
       </button>
 
       <Dialog ref={dialogModal}>

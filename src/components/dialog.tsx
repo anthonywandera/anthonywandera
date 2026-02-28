@@ -25,7 +25,7 @@ const Dialog = forwardRef<
 
         if (targetEl.id === "dialog") (targetEl as HTMLDialogElement).close();
       }}
-      className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[60%] max-md:w-[80%] [&::backdrop]:backdrop-blur-xs"
+      className="fixed left-1/2 top-1/2 overflow-y-scroll [scrollbar-width:none] -translate-x-1/2 -translate-y-1/2 z-50 bg-transparent w-[90%] [&::backdrop]:backdrop-blur-xs"
     >
       {children}
     </dialog>
